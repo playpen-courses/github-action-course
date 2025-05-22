@@ -1,0 +1,12 @@
+name: Workflow Run Even
+
+on:
+    workflow_run:
+        workflows: [Workflow Commands]
+        types: [completed]
+
+jobs:
+    echo-string:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "I was triggered by other workflow"
