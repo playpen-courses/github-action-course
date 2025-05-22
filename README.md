@@ -6,6 +6,8 @@
 
 - [![Workflow Commands](https://github.com/playpen-courses/github-action-course/actions/workflows/wf-commands.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/wf-commands.yml)
 
+- [![Working Directory & Shells & Defaults](https://github.com/playpen-courses/github-action-course/actions/workflows/working-dir-and-shells-and-defaults.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/working-dir-and-shells-and-defaults.yml)
+
 # Documentation
 - [Workflow Commands Docs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions)
 
