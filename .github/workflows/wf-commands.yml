@@ -29,7 +29,9 @@ jobs:
                 echo "::endgroup::"
 
             - name: Masking a Value
-              run: "::add-mask::Abadi Salman"
+              env:
+                SECRET: "Abadi Salman"
+              run: echo "::add-mask::$SECRET"
 
             - name: Echo Masked Value
               run: echo "Abadi Salman"
