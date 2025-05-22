@@ -19,6 +19,13 @@
 
 - [Workflow Syntax](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 
+- [Events Docs](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows)
+
+- Approving workflow runs from private / public forks
+    - [Approving workflow runs from private forks](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/approving-workflow-runs-from-private-forks)
+    
+    - [Approving workflow runs from public forks](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/approving-workflow-runs-from-public-forks)
+
 - [Actions Marketplace](https://github.com/marketplace?type=actions)
 
 - [Checkout Actions Docs](https://github.com/marketplace/actions/checkout)
