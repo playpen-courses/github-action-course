@@ -3,3 +3,6 @@
 # Add Badge
 
 - [![First Workflow](https://github.com/playpen-courses/github-action-course/actions/workflows/first-workflow.yml/badge.svg)](https://github.com/playpen-courses/github-action-course/actions/workflows/first-workflow.yml)
+
+# Documentation
+- [Workflow Commands Docs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions)
