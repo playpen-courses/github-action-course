@@ -12,3 +12,18 @@ jobs:
               run: |-
                 node -v
                 npm -v
+    
+    parallel-ob-macos:
+        runs-on: macos-latest
+        steps:
+            - name: View SW Version
+              run: sw_vers
+    
+    dependant-job:
+        needs: run-shell-commands
+        runs-on: windows-latest
+        steps:
+            - name: echo a string
+              run: Write-Output "Windows String"
+            - name: Error Step
+              run: doiakhdsfsk
