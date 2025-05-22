@@ -1,9 +1,9 @@
-name: Manual Checkout
+name: Checkout
 
 on: [push]
 
 jobs:
-    checkout-and-display-files:
+    checkout-and-display-files-manually:
         runs-on: ubuntu-latest
         steps:
             - name: List Files Before
@@ -18,5 +18,15 @@ jobs:
 
             - name: List Files After
               run: ls -a
+    
+    checkout-and-display-files-automatically:
+        runs-on: ubuntu-latest
+        steps:
+            - name: List Files Before
+              run: ls -a
+            - uses: actions/checkout@v4
+            - name: List Files After
+              run: ls -a
+
 
         
