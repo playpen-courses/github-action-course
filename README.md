@@ -10,6 +10,8 @@
 
 - [![Checkout](https://github.com/playpen-courses/github-action-course/actions/workflows/checkout.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/checkout.yml)
 
+- [![Pull Request Auto Comments](https://github.com/playpen-courses/github-action-course/actions/workflows/pr-auto-commit.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/pr-auto-commit.yml)
+
 # Documentation
 - [Yaml Format](https://learnxinyminutes.com/yaml/)
 
@@ -29,3 +31,7 @@
 - [Actions Marketplace](https://github.com/marketplace?type=actions)
 
 - [Checkout Actions Docs](https://github.com/marketplace/actions/checkout)
+
+- [Github Script Action](https://github.com/actions/github-script)
+
+- [Github Rest Api Docs](https://octokit.github.io/rest.js/v19/)
