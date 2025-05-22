@@ -1,0 +1,35 @@
+name: Workflow Commands
+
+on: [push]
+
+jobs:
+    testing-wf-commands:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Error Command
+              run: echo "::error::Missing semicolon"
+
+            - name: Error Command With Params
+              run: echo "::error title=Error title, file=apps.js::Missing semicolon"
+
+            - name: Debug Command With Params
+              run: echo "::debug title=Error title, file=apps.js::Missing semicolon"
+
+            - name: Notice Command With Params
+              run: echo "::notice title=Error title, file=apps.js::Missing semicolon"
+
+            - name: Warning Command With Params
+              run: echo "::warning title=Error title, file=apps.js::Missing semicolon"
+
+            - name: Grouping Log Lines
+              run: |-
+                echo "::group::Group Lines"
+                echo "first line"
+                echo "second line"
+                echo "::endgroup::"
+
+            - name: Masking a Value
+              run: "::add-mask::Abadi Salman"
+
+            - name: Echo Masked Value
+              run: echo "Abadi Salman"
