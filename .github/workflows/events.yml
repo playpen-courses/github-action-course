@@ -1,0 +1,35 @@
+name: Repository Events
+
+on:
+    push:
+        branches:
+            - main
+            - "feature/*" # mathces feature/a, feature/b, doesn't match feature/a/aa
+            - "feature/**" # matches feature/a/aa/aaa
+            - "!feature/c" # it will be execluded. The order is matter, you can not but this in the first filter because the worklow will go to the second filter and will trigger all freature/* forgetting about the first filter
+        # branches-ignore: can not use branches and branches-ignore in the same workflow
+        #     - "feature/c"
+        tags:
+            - v1.* # matches v1.1, v1.1.2
+            - "!v1.1.1"
+        # tags-ignore
+        paths: # The workflow will only trigger if the changes happen with matching filter pattern
+            - "**.js"
+            - "!apps.js"
+        # paths-ignore
+    pull_request:
+        types: [opened, assigned, reopened, synchronize]
+        branches:
+            - main
+        # paths:
+    issues:
+        types: [opened]
+
+jobs:
+    checout-test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+            - run: |-
+                echo $GITHUB_SHA
+                echo $GITHUB_REF

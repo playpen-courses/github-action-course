@@ -4,6 +4,8 @@ on:
     workflow_run:
         workflows: [Workflow Commands]
         types: [completed]
+        branches:
+            - main # means after completing Workflow Commands run in the main branch, trigger this workflow
 
 jobs:
     echo-string:

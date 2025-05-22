@@ -12,6 +12,8 @@
 
 - [![Pull Request Auto Comments](https://github.com/playpen-courses/github-action-course/actions/workflows/pr-auto-commit.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/pr-auto-commit.yml)
 
+- [![Repository Events](https://github.com/playpen-courses/github-action-course/actions/workflows/events.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/events.yml)
+
 - [![Workflow Run Even](https://github.com/playpen-courses/github-action-course/actions/workflows/workflow-run-event.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/workflow-run-event.yml)
 
 # Documentation
@@ -25,6 +27,8 @@
 
 - [Events Docs](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows)
 
+- [Workflow_run Event](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_run)
+
 - Approving workflow runs from private / public forks
     - [Approving workflow runs from private forks](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/approving-workflow-runs-from-private-forks)
     
@@ -37,3 +41,5 @@
 - [Github Script Action](https://github.com/actions/github-script)
 
 - [Github Rest Api Docs](https://octokit.github.io/rest.js/v19/)
+
+- [Filter pattern cheat sheet](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet)
