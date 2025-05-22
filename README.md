@@ -2,7 +2,9 @@
 
 # Add Badge
 
-- [![First Workflow](https://github.com/playpen-courses/github-action-course/actions/workflows/first-workflow.yml/badge.svg)](https://github.com/playpen-courses/github-action-course/actions/workflows/first-workflow.yml)
+- [![First Workflow](https://github.com/playpen-courses/github-action-course/actions/workflows/first-workflow.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/first-workflow.yml)
+
+- [![Workflow Commands](https://github.com/playpen-courses/github-action-course/actions/workflows/wf-commands.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/wf-commands.yml)
 
 # Documentation
 - [Workflow Commands Docs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions)
