@@ -12,7 +12,7 @@ jobs:
               uses: actions/github-script@v6
               with:
                 script: |-
-                    octokit.rest.issues.createComment({
+                    github.rest.issues.createComment({
                         owner: github.repository_owner,
                         repo: github.repository,
                         issue_number: context.issue.number,
