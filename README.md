@@ -17,7 +17,16 @@
 - [![Workflow Run Even](https://github.com/playpen-courses/github-action-course/actions/workflows/workflow-run-event.yml/badge.svg?branch=main)](https://github.com/playpen-courses/github-action-course/actions/workflows/workflow-run-event.yml)
 
 # Documentation
+
 - [Yaml Format](https://learnxinyminutes.com/yaml/)
+
+- [Github API Docs](https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event)
+
+- [Filter pattern cheat sheet](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet)
+
+- [GITHUB CLI](https://cli.github.com/manual/gh_workflow_run)
+
+## Events That Trigger Workflows
 
 - [Workflow Commands Docs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions)
 
@@ -42,8 +51,5 @@
 
 - [Github octokit/rest.js Api Docs](https://octokit.github.io/rest.js/v19/)
 
-- [Github API Docs](https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event)
 
-- [Filter pattern cheat sheet](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet)
-
-- [GITHUB CLI](https://cli.github.com/manual/gh_workflow_run)
+## Expressions, Contexts, Functions, Environment Variables
