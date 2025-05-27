@@ -1,0 +1,12 @@
+name: External Run
+
+on:
+    repository_dispatch:
+        types: [test]
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo The input
+              run: echo ${{ github.event.client_payload.hi}}

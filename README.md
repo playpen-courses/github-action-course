@@ -40,6 +40,10 @@
 
 - [Github Script Action](https://github.com/actions/github-script)
 
-- [Github Rest Api Docs](https://octokit.github.io/rest.js/v19/)
+- [Github octokit/rest.js Api Docs](https://octokit.github.io/rest.js/v19/)
+
+- [Github API Docs](https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event)
 
 - [Filter pattern cheat sheet](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet)
+
+- [GITHUB CLI](https://cli.github.com/manual/gh_workflow_run)
