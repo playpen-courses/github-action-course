@@ -35,7 +35,7 @@ jobs:
                     - os: ubuntu-latest
                       node-version: 14
             # max-parallel: 3
-            fail-fast: true # this to overiide the default behavioure if one job failed or cancelled the other will fail and cancell
+            fail-fast: false # this to overiide the default behavioure if one job failed or cancelled the other will fail and cancell
 
         runs-on: ${{ matrix.os }}
         steps:
