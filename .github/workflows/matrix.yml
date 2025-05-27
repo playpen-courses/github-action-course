@@ -3,6 +3,16 @@ run-name: Matrix Run
 
 on: [push]
 
+#------- ORIGINAL --------#
+# X {os: ubuntu-latest, node-version: 14, is-ubuntu: true, experimental: false}
+# {os: ubuntu-latest, node-version: 15, is-ubuntu: true, experimental: false}
+# {os: ubuntu-latest, node-version: 16, is-ubuntu: true, experimental: true}
+# {os: windows-latest, node-version: 14, experimental: false}
+# {os: windows-latest, node-version: 15, experimental: false}
+# {os: windows-latest, node-version: 16, experimental: false}
+# {os: macos-latest, node-version: 15}
+# {os: ubuntu-latest, node-version: 17 }
+
 jobs:
     node-matrix:
         # continue-on-error: true 
@@ -10,6 +20,20 @@ jobs:
             matrix:
                 node-version: [14, 15, 16]
                 os: [ubuntu-latest, windows-latest]
+                include:
+                    - os: ubuntu-latest
+                      is-ubuntu: true
+                    - os: macos-latest
+                      node-version: 15
+                    - experimental: false
+                    - os: ubuntu-latest
+                      node-version: 16
+                      experimental: true
+                    - os: ubuntu-latest
+                      node-version: 17
+                exclude:
+                    - os: ubuntu-latest
+                      node-version: 14
             # max-parallel: 3
             fail-fast: false # this to overiide the default behavioure if one job failed or cancelled the other will fail and cancell
 
@@ -20,3 +44,8 @@ jobs:
               with:
                 node-version: ${{ matrix.node-version }}
             - run: node -v
+            - name: Log all matrix
+              run: echo '${{ toJson(matrix) }}'
+            - name: Log Matrix if experimental is true
+              if: ${{ matrix.experimental }}
+              run: echo "Experimental is True"
