@@ -15,7 +15,7 @@ on: [push]
 
 jobs:
     node-matrix:
-        # continue-on-error: true 
+        continue-on-error: ${{ matrix.experimental == true }}
         strategy:
             matrix:
                 node-version: [14, 15, 16]
@@ -35,7 +35,7 @@ jobs:
                     - os: ubuntu-latest
                       node-version: 14
             # max-parallel: 3
-            fail-fast: false # this to overiide the default behavioure if one job failed or cancelled the other will fail and cancell
+            fail-fast: true # this to overiide the default behavioure if one job failed or cancelled the other will fail and cancell
 
         runs-on: ${{ matrix.os }}
         steps:
@@ -48,4 +48,4 @@ jobs:
               run: echo '${{ toJson(matrix) }}'
             - name: Log Matrix if experimental is true
               if: ${{ matrix.experimental }}
-              run: echo "Experimental is True"
+              run: exit 1
