@@ -13,7 +13,7 @@ jobs:
             # max-parallel: 3
             fail-fast: false # this to overiide the default behavioure if one job failed or cancelled the other will fail and cancell
 
-        runs-on: ${{ matrix.os }}
+        runs-on: ${{ matrix.os[0] }}
         steps:
             - run: node -v
             - uses: actions/setup-node@v3
