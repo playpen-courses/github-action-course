@@ -1,0 +1,22 @@
+name: Matrix
+run-name: Matrix Run
+
+on: [push]
+
+jobs:
+    node-matrix:
+        # continue-on-error: true 
+        strategy:
+            matrix:
+                node-version: [14, 15, 16]
+                os: [ubuntu-latest, windows-latest]
+            # max-parallel: 3
+            fail-fast: false # this to overiide the default behavioure if one job failed or cancelled the other will fail and cancell
+
+        runs-on: ${{ matrix.os }}
+        steps:
+            - run: node -v
+            - uses: actions/setup-node@v3
+              with:
+                node-version: ${{ matrix.node-version }}
+            - run: node -v
