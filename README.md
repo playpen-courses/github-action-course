@@ -65,3 +65,7 @@
 ### Contexts
 
 - [All Contexts Docs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs)
+
+### Environment Variables
+
+- [Default Environment Variables](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#default-environment-variables)
