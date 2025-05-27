@@ -24,10 +24,10 @@ jobs:
             echo "JOB_LEVEL_ENV=$RANDOM" >> $GITHUB_ENV
       - name: Multiline Env Var
         run: |-
-            echo "RANDOM_JOKE << EOF" >> $GITHUB_ENV
+            echo "RANDOM_JOKE<<EOF" >> $GITHUB_ENV
             echo "Here is a joke:" >> $GITHUB_ENV
             curl -s https://icanhazdadjoke.com/ >> $GITHUB_ENV
-            echo "" >> $GITHUB_ENV #new line before close the delimiter
+            echo "" >> $GITHUB_ENV
             echo EOF >> $GITHUB_ENV
       - name: Log Custom ENV Vars
         env:
