@@ -36,10 +36,10 @@ jobs:
           with:
             script: |
               let osString = ${{inputs.os}}.replace(" ", "")
-              let nodeVersion = ${{inputs.node-version}}.replace(" ", "")
+              let nodeVersionString = ${{inputs.node-version}}.replace(" ", "")
               
               let osArray = osString.split(",") 
-              let nodeVersionArray = nodeVersion.split(",") 
+              let nodeVersionArray = nodeVersionString.split(",") 
 
               return {
                 os: osArray
