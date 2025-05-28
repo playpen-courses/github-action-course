@@ -53,6 +53,7 @@ jobs:
 
       outputs:
         matrix-array: ${{ steps.array.outputs.result }}
+    
     node-matrix:
       needs: prepare-matrix
       strategy:
