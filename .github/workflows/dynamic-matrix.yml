@@ -35,11 +35,11 @@ jobs:
           uses: actions/github-script@v6
           with:
             script: |
-              const os-string = ${{inputs.os}}.replace(" ", "")
-              const node-version= ${{inputs.node-version}}.replace(" ", "")
+              let os-string = ${{inputs.os}}.replace(" ", "")
+              let node-version = ${{inputs.node-version}}.replace(" ", "")
               
-              const os-array = os-sting.split(",") 
-              const node-version-array = node-version.split(",") 
+              let os-array = os-sting.split(",") 
+              let node-version-array = node-version.split(",") 
 
               return {
                 os: os-array
