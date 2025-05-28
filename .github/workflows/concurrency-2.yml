@@ -10,7 +10,7 @@ on:
                 required: true
 
 concurrency:
-    group: ${{inputs.env}}
+    group: ${{github.workflow}}-${{inputs.env}}
     cancel-in-progress: true
 
 jobs:
