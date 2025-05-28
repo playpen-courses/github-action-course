@@ -34,6 +34,7 @@ jobs:
           id: array
           uses: actions/github-script@v6
           with:
+            result-encoding: json
             script: |
               let osString = context.payload.inputs["os"].replace(" ", "")
               let nodeVersionString = context.payload.inputs["node-version"].replace(" ", "")
@@ -42,13 +43,13 @@ jobs:
               let nodeVersionArray = nodeVersionString.split(",") 
 
               return {
-                os = osArray,
-                nodeVersion =  nodeVersionArray
+                os: osArray,
+                nodeVersion:  nodeVersionArray
               }
         - run: | 
             echo ${{steps.array.outputs.result}}
-            echo os: ${{steps.array.outputs.result.os}}
-            echo node-version: ${{steps.array.outputs.result.nodeVersion}}
+            echo os: ${{steps.array.outputs.result['os']}}
+            echo node-version: ${{steps.array.outputs.result['nodeVersion']}}
 
       outputs:
         os: ${{ steps.array.outputs.result.os }}
