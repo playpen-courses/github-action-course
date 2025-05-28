@@ -52,8 +52,8 @@ jobs:
             echo node-version: ${{fromJson(steps.array.outputs.result).nodeVersion}}
 
       outputs:
-        os: ${{ fromJson(steps.array.outputs.result).os }}
-        node-version: ${{ fromJson(steps.array.outputs.result).nodeVersion }}
+        os: ${{ fromJson(steps.array.outputs.result.os) }}
+        node-version: ${{ fromJson(steps.array.outputs.result.nodeVersion) }}
     node-matrix:
       needs: prepare-matrix
       strategy:
