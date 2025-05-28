@@ -7,10 +7,12 @@ on:
         description: Operating Systems
         type: string
         required: true
+        default: ubuntu-latest, windows-latest
       node-version:
         description: Node Version
         type: string
         required: true
+        default: 13, 14, 15
 
 
 
@@ -32,7 +34,7 @@ jobs:
           id: array
           uses: actions/github-script@v6
           with:
-            scritp: |
+            script: |
               const os-string = ${{inputs.os}}.replace(" ", "")
               const node-version= ${{inputs.node-version}}.replace(" ", "")
               
