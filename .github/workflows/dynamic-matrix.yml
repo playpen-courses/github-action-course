@@ -35,8 +35,8 @@ jobs:
           uses: actions/github-script@v6
           with:
             script: |
-              let osString = ${{inputs.os}}.replace(" ", "")
-              let nodeVersionString = ${{inputs.node-version}}.replace(" ", "")
+              let osString = context.payload.inputs["os"].replace(" ", "")
+              let nodeVersionString = context.payload.inputs["node-version"].replace(" ", "")
               
               let osArray = osString.split(",") 
               let nodeVersionArray = nodeVersionString.split(",") 
