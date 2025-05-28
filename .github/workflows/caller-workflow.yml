@@ -9,16 +9,17 @@ on:
         required: false
 jobs:
   calling-a-reusable-wf:
+    uses: playpen-courses/workflows/.github/workflows/reusable-workflow.yml@main
+    with:
+        name: ${{ inputs.name }}
+    secrets:
+        access_token: ${{ secrets.ACCESS_SECRETS }}
+  display-reusable-wf-output:
+    needs: calling-a-reusable-wf
     runs-on: unbuntu-latest
     steps:
-        - id: get-output
-          uses: playpen-courses/workflows/.github/workflows/reusable-workflow.yml@main
-          with:
-            name: ${{ inputs.name }}
-          secrets:
-            access_token: ${{ secrets.ACCESS_SECRETS }}
         - name: Display output
-          run: echo '${{steps.get-output.outputs.greeting}}'
+          run: echo '${{needs.calling-a-reusable-wf.outputs.greeting}}'
             
             
     
