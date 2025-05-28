@@ -42,8 +42,8 @@ jobs:
               let nodeVersionArray = nodeVersionString.split(",") 
 
               return {
-                os: osArray
-                nodeversion: nodeVersionArray
+                os: osArray,
+                nodeVersion: nodeVersionArray
               }
         - run: echo ${{steps.array.outputs.result}}
 
