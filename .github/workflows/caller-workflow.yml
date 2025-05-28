@@ -19,7 +19,7 @@ jobs:
     runs-on: unbuntu-latest
     steps:
         - name: Display output
-          run: echo '${{needs.calling-a-reusable-wf.outputs.greeting}}'
+          run: echo ${{ needs.calling-a-reusable-wf.outputs.greeting }}
             
             
     
