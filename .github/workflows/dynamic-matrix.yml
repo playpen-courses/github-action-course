@@ -48,8 +48,8 @@ jobs:
               }
         - run: | 
             echo ${{steps.array.outputs.result}}
-            echo os: ${{fromJson(steps.array.outputs.result).os}}
-            echo node-version: ${{fromJson(steps.array.outputs.result).nodeVersion}}
+            echo os: ${{fromJson(steps.array.outputs.result.os)}}
+            echo node-version: ${{fromJson(steps.array.outputs.result.nodeVersion)}}
 
       outputs:
         os: ${{ fromJson(steps.array.outputs.result.os) }}
