@@ -43,7 +43,7 @@ jobs:
 
               return {
                 os: osArray
-                node-version: nodeVersionArray
+                nodeversion: nodeVersionArray
               }
         - run: echo ${{steps.array.outputs.result}}
 
