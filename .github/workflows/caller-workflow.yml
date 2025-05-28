@@ -16,7 +16,7 @@ jobs:
         access_token: ${{ secrets.ACCESS_SECRETS }}
   display-reusable-wf-output:
     needs: calling-a-reusable-wf
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps:
         - name: Display output
           run: echo ${{ needs.calling-a-reusable-wf.outputs.greeting }}
