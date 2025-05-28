@@ -38,12 +38,18 @@ jobs:
               const os-string = ${{inputs.os}}.replace(" ", "")
               const node-version= ${{inputs.node-version}}.replace(" ", "")
               
-              const os-array = os-sting.split(",") >> $GITHUB_OUTPUT
-              const node-version-array = node-version.split(",") >> $GITHUB_OUTPUT
+              const os-array = os-sting.split(",") 
+              const node-version-array = node-version.split(",") 
+
+              return {
+                os: os-array
+                node-version: node-version-array
+              }
+        - run: echo ${{steps.array.outputs.result}}
 
       outputs:
-        os: ${{ steps.array.outputs.os-array }}
-        node-version: ${{ steps.array.outputs.node-version-array }}
+        os: ${{ steps.array.outputs.result.os }}
+        node-version: ${{ steps.array.outputs.result.node-version }}
     node-matrix:
       needs: prepare-matrix
       strategy:
