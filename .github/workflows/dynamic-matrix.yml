@@ -21,26 +21,39 @@ jobs:
         - name: Set up OS outputs
           id: os-split
           run: echo "step-output=value" >> $GITHUB_OUTPUT
-
         - name: Set up node-version outputs
           id: node-version-split
           run: echo "step-output=value 2" >> $GITHUB_OUTPUT
-
         - name: Use Output
           run: |-
             echo '${{steps.os-split.outputs.step-output}}'
             echo '${{steps.node-version-split.outputs.step-output}}'
+        - name: Convert string to array
+          id: array
+          uses: actions/github-script@v6
+          with:
+            scritp: |
+              const os-string = ${{inputs.os}}.replace(" ", "")
+              const node-version= ${{inputs.node-version}}.replace(" ", "")
+              
+              const os-array = os-sting.split(",") >> $GITHUB_OUTPUT
+              const node-version-array = node-version.split(",") >> $GITHUB_OUTPUT
+
+      outputs:
+        os: ${{ steps.array.outputs.os-array }}
+        node-version: ${{ steps.array.outputs.node-version-array }}
     node-matrix:
-        strategy:
-            matrix:
-                node-version: [14, 15, 16]
-                os: ["ubuntu-latest", "windows-latest"]
-        runs-on: ${{ matrix.os }}
-        steps:
-            - run: node -v
-            - uses: actions/setup-node@v3
-              with:
-                node-version: ${{ matrix.node-version }}
-            - run: node -v
-            - name: Log all matrix
-              run: echo '${{ toJson(matrix) }}'
+      needs: prepare-matrix
+      strategy:
+          matrix:
+              node-version: ${{ needs.prepare-matrix.outputs.node-version }}
+              os: ${{ needs.prepare-matrix.outputs.os }}
+      runs-on: ${{ matrix.os }}
+      steps:
+          - run: node -v
+          - uses: actions/setup-node@v3
+            with:
+              node-version: ${{ matrix.node-version }}
+          - run: node -v
+          - name: Log all matrix
+            run: echo '${{ toJson(matrix) }}'
