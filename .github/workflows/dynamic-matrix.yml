@@ -35,21 +35,21 @@ jobs:
           uses: actions/github-script@v6
           with:
             script: |
-              let os-string = ${{inputs.os}}.replace(" ", "")
-              let node-version = ${{inputs.node-version}}.replace(" ", "")
+              let osString = ${{inputs.os}}.replace(" ", "")
+              let nodeVersion = ${{inputs.node-version}}.replace(" ", "")
               
-              let os-array = os-sting.split(",") 
-              let node-version-array = node-version.split(",") 
+              let osArray = osString.split(",") 
+              let nodeVersionArray = nodeVersion.split(",") 
 
               return {
-                os: os-array
-                node-version: node-version-array
+                os: osArray
+                nodeVersion: nodeVersionArray
               }
         - run: echo ${{steps.array.outputs.result}}
 
       outputs:
         os: ${{ steps.array.outputs.result.os }}
-        node-version: ${{ steps.array.outputs.result.node-version }}
+        node-version: ${{ steps.array.outputs.result.nodeVersion }}
     node-matrix:
       needs: prepare-matrix
       strategy:
