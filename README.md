@@ -28,6 +28,8 @@
 
 - [Permissions Table](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token)
 
+- [Reusable workflow](https://docs.github.com/en/actions/sharing-automations/reusing-workflows)
+
 ## Events That Trigger Workflows
 
 - [Workflow Commands Docs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions)
