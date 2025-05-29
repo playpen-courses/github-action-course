@@ -13,7 +13,10 @@ jobs:
               uses: actions/cache@v4
               with:
                 path: ~/.npm
-                key: "npm-cache"
+                key: "npm-cache-${{hashFiles('**/package-lock.json')}}"
+                restore-keys: | 
+                    ${{runner.os}}-npm-cache-
+                    ${{runner.os}}-npm
             
             - name: Display Cache
               run: echo '${{toJson(steps.npm-cache.outputs)}}'
