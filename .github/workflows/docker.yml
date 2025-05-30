@@ -31,12 +31,21 @@ jobs:
             - name: Log Env Var
               run: echo $URL
 
+            - name: Create a file in job container
+              run: echo 'File in job container' > text.txt
+
             - name: Container in a Step
               uses: docker://node:18.16-alpine3.17
               with:
                 args: -p 2+3
             
-            - name: Container in a Step
+            - name: Log version
               uses: docker://node:18.16-alpine3.17
               with:
                 args: -v
+
+            - name: Access the file in the job container
+              uses: docker://node:18.16-alpine3.17
+              with:
+                entrypoint: cat
+                args: text.txt
