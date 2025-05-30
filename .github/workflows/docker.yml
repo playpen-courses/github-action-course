@@ -1,0 +1,25 @@
+name: Docker Run
+
+on: [workflow_dispatch]
+
+jobs:
+    docker-job:
+        runs-on: ubuntu-latest
+        container:
+            image: node:20.3-alpine3.17
+            # credentials:
+            #     username:
+            #     password:
+            env:
+                URL: example.com
+            # volumes:
+            #     - volume_name:paths/in/container
+            ports:
+                - 80
+        steps:
+            - name: Log Container Details
+              run: |-
+                node -v
+                cat /etc/os-release
+            - name: Log Env Var
+              run: echo $URL
