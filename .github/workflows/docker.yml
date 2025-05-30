@@ -21,6 +21,7 @@ jobs:
             - uses: actions/cache@v4
               with:
                 key: docker
+                path: ~/.npm
             - name: Log Container Details
               run: |-
                 node -v
