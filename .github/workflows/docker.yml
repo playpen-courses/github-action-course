@@ -18,6 +18,8 @@ jobs:
                 - 80
         steps:
             - uses: actions/checkout@v4
+            - name: List the dir
+              run: ls -a
             - uses: actions/cache@v4
               with:
                 key: docker
