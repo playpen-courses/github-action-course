@@ -30,3 +30,13 @@ jobs:
                 cat /etc/os-release
             - name: Log Env Var
               run: echo $URL
+
+            - name: Container in a Step
+              uses: docker://node:18.16-alpine3.17
+              with:
+                args: -p 2+3
+            
+            - name: Container in a Step
+              uses: docker://node:18.16-alpine3.17
+              with:
+                args: -v
