@@ -1,4 +1,4 @@
-#!/bin/node
+#!/bin/sh
 
 echo "$@"
 
